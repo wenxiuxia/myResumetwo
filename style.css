@@ -29,6 +29,77 @@ html, body {
     -webkit-transform-origin: top;
 }
 
+.tip {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    z-index: 111;
+    border: 20px solid #fff;
+    border-color: transparent transparent #fff transparent;
+
+    -webkit-animation: tipMove 1.5s ease-in-out 0s infinite both;
+    animation: tipMove 1.5s ease-in-out 0s infinite both;
+}
+
+@-webkit-keyframes tipMove {
+    0%, 100% {
+        opacity: 1;
+        bottom: 20px;
+    }
+    50% {
+        opacity: 0;
+        bottom: 30px;
+    }
+}
+
+@keyframes tipMove {
+    0%, 100% {
+        opacity: 1;
+        bottom: 20px;
+    }
+    50% {
+        opacity: 0;
+        bottom: 30px;
+    }
+}
+
+/*------------------------*/
+.one-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -130px 0 0 -130px;
+    width: 260px;
+    height: 260px;
+    border: 1px dashed red;
+    border-radius: 50%;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.inner > div.move .one-box {
+    -webkit-animation: one-boxMove 1s linear 0s infinite both;
+    animation: one-boxMove 1s linear 0s infinite both;
+}
+
+@-webkit-keyframes one-boxMove {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes one-boxMove {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
 .slide li {
     position: absolute;
     top: 0;
@@ -116,7 +187,7 @@ html, body {
 }
 
 .a1 p:nth-child(2) {
-    bottom: 3px;
+    bottom: 30px;
     height: 526px;
     line-height: 42px;
     text-align: center;
@@ -159,7 +230,7 @@ html, body {
     line-height: 52px;
     color: #fff;
     letter-spacing: 5px;
-    text-shadow: 5px 5px 5px #000;
+    text-shadow: 5px 5px 5px #1a1a1a;
 }
 .a3 p:nth-child(1){
     top: 0;
@@ -213,4 +284,36 @@ transition能用animition就不用transition
   transition 帧动画，一帧一帧的动，耗性能
   animition 模拟动画
   */
+
+
+.music{
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 66px;
+    width: 30px;
+    height: 30px;
+    background: url("video/music.svg") no-repeat;
+    background-size: 100% 100%;
+    z-index: 150;
+}
+
+.music.move{
+    -webkit-animation: audioMove 1s linear 0s infinite both;
+    animation: audioMove 1s linear 0s infinite both;
+}
+
+@-webkit-keyframes audioMove {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes audioMove {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
